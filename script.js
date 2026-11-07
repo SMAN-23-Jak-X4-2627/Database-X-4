@@ -1,9 +1,8 @@
 console.log("i know you're here.")
 
 function studentPage(event) {
-    const id = event.target.dataset.id;
-    console.log(id)
-    //window.location.href = "students/student.html?id=" + id;
+    const id = event.currentTarget.dataset.id;
+    window.location.href = "students/student.html?id=" + id;
 }
 document.querySelectorAll(".student-card").forEach(card => {
     card.addEventListener("click", studentPage)

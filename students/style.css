@@ -24,11 +24,13 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
 .left-side {
     display: flexbox;
     justify-content: center;
     flex-direction: column;
+}
+.inactive {
+    display: none !important;
 }
 
 button {
@@ -41,6 +43,7 @@ button {
 
     display: flexbox;
     align-items: center;
+    cursor: pointer;
 }
 
 .card {
@@ -76,8 +79,19 @@ button {
     }
 }
 .music-player {
-    background-color: rgba(16, 127, 79, 0.327);
-    border-radius: 4px;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    background: #333;
+}
+.cell {
+    padding: 16px;
+    border: 4px solid black;
+}
+.music-player img {
+    max-width: 164px;
+    max-height: auto;
+}
+input[type=range] {
+    width: 50%;
+    accent-color: white;
 }
