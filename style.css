@@ -40,7 +40,8 @@ hr {
 
 .grid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(284px, 100%), 1fr));
+    place-items: center;
     padding: 12px;
 }
 .grid div { /* here the card*/
@@ -52,7 +53,8 @@ hr {
     font-size: 36px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.7);
     transition: 150ms;
-    cursor: pointer
+    cursor: pointer;
+    object-position: center;
 }
 .grid div:hover {
     animation: float 1s ease-in-out infinite;
@@ -60,8 +62,9 @@ hr {
     z-index: 998;
 }
 .grid div img {
-    max-width: 284px;
-    height: auto;
+    width: 284px;
+    height: 384px;
+    object-fit: cover;
 }
 .grid div h4 {
     margin: 8px;

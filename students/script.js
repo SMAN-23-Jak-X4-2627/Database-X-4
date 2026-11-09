@@ -20,6 +20,12 @@ async function dataDisplay(data) {
                                                 Motto: ${data.motto}`
     
     document.getElementById('desc').textContent = data.desc
+
+    const photos = document.querySelectorAll('.gallery')
+    for (let i = 0; i < photos.length; i++) {
+        if (data.gallery[i] != "") photos[i].classList.toggle('inactive')
+        photos[i].src = studDir + id + '/gallery/' + data.gallery[i]
+    }
 }
 
 const data = await loadData(id)
