@@ -58,14 +58,14 @@ button {
     transition: 150ms;
 }
 .card img {
-    max-width: auto;
-    max-height: 728px;
+    max-width: 420px;
+    max-height: auto;
 }
 .card h4 {
     margin: 8px;
 }
 
-.music p {
+.float {
     text-align: center;
     font-size: xx-large;
     animation: float 3s ease-in-out infinite;

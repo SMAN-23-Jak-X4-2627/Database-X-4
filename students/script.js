@@ -1,5 +1,7 @@
 const id = new URLSearchParams(location.search).get("id") || 22
 
+if (id == 22) document.getElementById('dev').classList.toggle('inactive')
+
 const studDir = '../assets/students/'
 
 import { loadData } from "./data-handler.js";
@@ -10,21 +12,28 @@ document.getElementById("back").addEventListener("click", () => {
 })
 
 async function dataDisplay(data) {
-    document.getElementById('photo').src = studDir + data.photourl
+    document.getElementById('photo').src = studDir + id + '/photo.jpg'
     document.getElementById('name').textContent = data.name
     
     document.getElementById('about').innerText = `Tanggal lahir: ${data.birthdate}
                                                 Hobi: ${data.hobby}
                                                 Hal yang ingin dicapai: ${data.goal}
                                                 Artis favorit: ${data.artist}
-                                                Motto: ${data.motto}`
+                                                Motto: ${data.motto}
+                                                
+                                                Kontak saya: ${data.contact}`
     
     document.getElementById('desc').textContent = data.desc
 
     const photos = document.querySelectorAll('.gallery')
     for (let i = 0; i < photos.length; i++) {
-        if (data.gallery[i] != "") photos[i].classList.toggle('inactive')
-        photos[i].src = studDir + id + '/gallery/' + data.gallery[i]
+        try {
+            fetch (studDir + id + '/gallery/' + (i + 1) + '.png')
+        } catch (error) {
+            return
+        }
+        photos[i].src = studDir + id + '/gallery/' + (i + 1) + '.png'
+        if (photos[i].src != null) photos[i].classList.toggle('inactive')
     }
 }
 
@@ -36,9 +45,9 @@ await dataDisplay(data)
 // section for each music player to interact
 
 // section for music player 1
-document.getElementById('s1au').src = studDir + data.song1au
+document.getElementById('s1au').src = studDir + id + "/songs/" + data.song1id + "/au.mp3"
 document.getElementById('s1t').textContent = data.song1ti
-document.getElementById('s1c').src = studDir + data.song1im
+document.getElementById('s1c').src = studDir + id + "/songs/" + data.song1id + "/ca.jpg"
 
 const s1au = document.getElementById('s1au')
 const s1b = document.getElementById('s1b')
@@ -75,9 +84,9 @@ if (data.song2ti != "") {
     document.getElementById('s2ca').classList.toggle('inactive')
     document.getElementById('s2cb').classList.toggle('inactive')
 
-    document.getElementById('s2au').src = studDir + data.song2au
+    document.getElementById('s2au').src = studDir + id + "/songs/" + data.song2id + "/au.mp3"
     document.getElementById('s2t').textContent = data.song2ti
-    document.getElementById('s2c').src = studDir + data.song2im
+    document.getElementById('s2c').src = studDir + id + "/songs/" + data.song2id + "/ca.jpg"
     
     const s2au = document.getElementById('s2au')
     const s2b = document.getElementById('s2b')
@@ -115,9 +124,9 @@ if (data.song3ti != "") {
     document.getElementById('s3ca').classList.toggle('inactive')
     document.getElementById('s3cb').classList.toggle('inactive')
 
-    document.getElementById('s3au').src = studDir + data.song3au
+    document.getElementById('s3au').src = studDir + id + "/songs/" + data.song3id + "/au.mp3"
     document.getElementById('s3t').textContent = data.song3ti
-    document.getElementById('s3c').src = studDir + data.song3im
+    document.getElementById('s3c').src = studDir + id + "/songs/" + data.song3id + "/ca.jpg"
     
     const s3au = document.getElementById('s3au')
     const s3b = document.getElementById('s3b')
