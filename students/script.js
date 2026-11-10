@@ -1,6 +1,15 @@
 const id = new URLSearchParams(location.search).get("id") || 22
 
-if (id == 22) document.getElementById('dev').classList.toggle('inactive')
+const ext = document.getElementById('ext')
+if (id == 22) {
+    ext.innerHTML = "/\\<br>|<br>main dev of the site!!!"
+}  else if (id == 2 || 18 || 30 || 31) {
+    ext.innerHTML = "/\\<br>|<br>part of the team who made this site!"
+} else if (id == 16) {
+    ext.innerHTML = "/\\<br>|<br>part of the team (?)"
+} else {
+    ext.innerHTML = ""
+}
 
 const studDir = '../assets/students/'
 
@@ -27,31 +36,36 @@ async function dataDisplay(data) {
 
     const photos = document.querySelectorAll('.gallery')
     for (let i = 0; i < photos.length; i++) {
-        try {
-            fetch (studDir + id + '/gallery/' + (i + 1) + '.png')
-        } catch (error) {
-            return
+        const h = await fetch(studDir + id + '/gallery/' + (i + 1) + '.png')
+        if (!h.ok) {
+            console.log('ignore this error it works though')
+            break
         }
+
         photos[i].src = studDir + id + '/gallery/' + (i + 1) + '.png'
-        if (photos[i].src != null) photos[i].classList.toggle('inactive')
+        photos[i].classList.toggle('inactive')
     }
 }
 
 const data = await loadData(id)
 await dataDisplay(data)
 
-// spectrum visualizer
+const s1au = document.getElementById('s1au')
+const s1b = document.getElementById('s1b')
+const s1sb = document.getElementById('s1sb')
 
-// section for each music player to interact
+const s2au = document.getElementById('s2au')
+const s2b = document.getElementById('s2b')
+const s2sb = document.getElementById('s2sb')
+
+const s3au = document.getElementById('s3au')
+const s3b = document.getElementById('s3b')
+const s3sb = document.getElementById('s3sb')
 
 // section for music player 1
 document.getElementById('s1au').src = studDir + id + "/songs/" + data.song1id + "/au.mp3"
 document.getElementById('s1t').textContent = data.song1ti
 document.getElementById('s1c').src = studDir + id + "/songs/" + data.song1id + "/ca.jpg"
-
-const s1au = document.getElementById('s1au')
-const s1b = document.getElementById('s1b')
-const s1sb = document.getElementById('s1sb')
 
 s1au.volume = 0.5
 
@@ -60,7 +74,11 @@ s1b.addEventListener('click', () => {
   else s1au.pause()
 });
 
-s1au.addEventListener('play', () => s1b.textContent = '⏸')
+s1au.addEventListener('play', () => {
+    s1b.textContent = '⏸'
+    s2au.pause()
+    s3au.pause()
+})
 s1au.addEventListener('pause', () => s1b.textContent = '▶')
 
 s1au.addEventListener('timeupdate', () => {
@@ -80,6 +98,8 @@ s1sb.addEventListener('input', () => {
 });
 
 // section for music player 2
+
+
 if (data.song2ti != "") {
     document.getElementById('s2ca').classList.toggle('inactive')
     document.getElementById('s2cb').classList.toggle('inactive')
@@ -87,10 +107,6 @@ if (data.song2ti != "") {
     document.getElementById('s2au').src = studDir + id + "/songs/" + data.song2id + "/au.mp3"
     document.getElementById('s2t').textContent = data.song2ti
     document.getElementById('s2c').src = studDir + id + "/songs/" + data.song2id + "/ca.jpg"
-    
-    const s2au = document.getElementById('s2au')
-    const s2b = document.getElementById('s2b')
-    const s2sb = document.getElementById('s2sb')
 
     s2au.volume = 0.5
 
@@ -99,7 +115,11 @@ if (data.song2ti != "") {
         else s2au.pause()
     });
 
-    s2au.addEventListener('play', () => s2b.textContent = '⏸')
+    s2au.addEventListener('play', () => {
+        s2b.textContent = '⏸'
+        s1au.pause()
+        s3au.pause()
+    })
     s2au.addEventListener('pause', () => s2b.textContent = '▶')
 
     s2au.addEventListener('timeupdate', () => {
@@ -120,6 +140,7 @@ if (data.song2ti != "") {
 }
 
 // section for music player 3
+
 if (data.song3ti != "") {
     document.getElementById('s3ca').classList.toggle('inactive')
     document.getElementById('s3cb').classList.toggle('inactive')
@@ -127,10 +148,6 @@ if (data.song3ti != "") {
     document.getElementById('s3au').src = studDir + id + "/songs/" + data.song3id + "/au.mp3"
     document.getElementById('s3t').textContent = data.song3ti
     document.getElementById('s3c').src = studDir + id + "/songs/" + data.song3id + "/ca.jpg"
-    
-    const s3au = document.getElementById('s3au')
-    const s3b = document.getElementById('s3b')
-    const s3sb = document.getElementById('s3sb')
 
     s3au.volume = 0.5
 
@@ -139,7 +156,11 @@ if (data.song3ti != "") {
         else s3au.pause()
     });
 
-    s3au.addEventListener('play', () => s3b.textContent = '⏸')
+    s3au.addEventListener('play', () => {
+        s3b.textContent = '⏸'
+        s2au.pause()
+        s1au.pause()
+    })
     s3au.addEventListener('pause', () => s3b.textContent = '▶')
 
     s3au.addEventListener('timeupdate', () => {
@@ -158,3 +179,5 @@ if (data.song3ti != "") {
         s3au.currentTime = (s3sb.value / 100) * s3au.duration;
     });
 }
+
+// spectrum visualizer
