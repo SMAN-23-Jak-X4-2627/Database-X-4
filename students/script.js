@@ -3,7 +3,7 @@ const id = new URLSearchParams(location.search).get("id") || 22
 const ext = document.getElementById('ext')
 if (id == 22) {
     ext.innerHTML = "/\\<br>|<br>main dev of the site!!!"
-}  else if (id == 2 || 18 || 30 || 31) {
+} else if (id == 2 || id == 18 || id == 30 || id == 31) {
     ext.innerHTML = "/\\<br>|<br>part of the team who made this site!"
 } else if (id == 16) {
     ext.innerHTML = "/\\<br>|<br>part of the team (?)"
@@ -17,7 +17,6 @@ import { loadData } from "./data-handler.js";
 
 document.getElementById("back").addEventListener("click", () => {
     window.location.href = "../index.html";
-    console.log("back")
 })
 
 async function dataDisplay(data) {

@@ -1,5 +1,19 @@
 console.log("i know you're here.")
 
+const namaPendek = [
+    '***REMOVED***', '***REMOVED***', '***REMOVED***', '***REMOVED***',
+    'Alfa', 'Alif', 'Anisa', '***REMOVED***',
+    'Armitha', 'Azizah', 'Chelsie', '***REMOVED***',
+    '***REMOVED***', 'Galuh', 'Gilang', 'Hasbi',
+    '***REMOVED***', 'Kiori', '***REMOVED***', '***REMOVED***',
+    '***REMOVED***', '***REMOVED***', '***REMOVED***', '***REMOVED***',
+    '***REMOVED***', 'Nabila', 'Nadine', 'Nesya',
+    '***REMOVED***', 'Putri', 'Samari', 'Sarah',
+    'Sharon', '***REMOVED***', 'Theodora', 'Zaskia'
+]
+
+document.querySelectorAll('.')
+
 function studentPage(event) {
     const id = event.currentTarget.dataset.id;
     window.location.href = "students/student.html?id=" + id;
@@ -33,3 +47,7 @@ function showSlide(index) {
 function changeSlide(dir) {
     showSlide(current + dir)
 }
+
+document.getElementById('info').addEventListener('click', a => {
+    window.location.href = 'info.html'
+})
