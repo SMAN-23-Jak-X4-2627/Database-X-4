@@ -40,9 +40,17 @@ async function dataDisplay(data) {
             console.log('ignore this error it works though')
             break
         }
-
+        // TODO: make it so that jpg can also work
+        // bru i REALLY have to be the only one using png
         photos[i].src = studDir + id + '/gallery/' + (i + 1) + '.png'
         photos[i].classList.toggle('inactive')
+    }
+
+    const h = await fetch(studDir + id + '/bg.jpg')
+    if (h.ok) {
+        document.body.style.backgroundImage = `url(${studDir}${id}/bg.jpg)`
+
+        //nvm i'm too lazy to make these work for both png and jpg
     }
 }
 

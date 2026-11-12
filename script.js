@@ -12,42 +12,23 @@ const namaPendek = [
     'Sharon', '***REMOVED***', 'Theodora', 'Zaskia'
 ]
 
-document.querySelectorAll('.')
-
 function studentPage(event) {
     const id = event.currentTarget.dataset.id;
-    window.location.href = "students/student.html?id=" + id;
+    window.location.href = 'students/student.html?id=' + id;
 }
+
+let i = 0
 document.querySelectorAll(".student-card").forEach(card => {
     card.addEventListener("click", studentPage)
+
+    card.querySelector('h4').textContent = namaPendek[i]
+    card.querySelector('img').src = `assets/students/${i + 1}/photo.jpg`
+    // TODO: make it so that png can also work
+    // wrtf bro everyone uses jpg :sob: :sob: nvm about it
+    i++
 })
 
 
-function isMobileDevice() {
-    return (
-        window.innerWidth < 768 &&
-        ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-    );
-    }
-
-if (isMobileDevice()) {
+if (window.innerWidth < 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
     alert("Tolong nyalakan mode desktop.")
 }
-
-
-let current = 0
-const slides = document.querySelectorAll(".carousel img")
-
-function showSlide(index) {
-    slides[current].classList.remove("active")
-    current = (index + slides.length) % slides.length
-    slides[current].classList.add("active")
-    console.log(current);
-}
-function changeSlide(dir) {
-    showSlide(current + dir)
-}
-
-document.getElementById('info').addEventListener('click', a => {
-    window.location.href = 'info.html'
-})
