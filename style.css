@@ -81,15 +81,26 @@ hr {
 }
 
 
-.carousel {
+.another-grid { /* forgive me */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(120px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(640px, 100%), 1fr));
     place-items: center;
 }
+.carousel {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+}
 .carousel img {
-    width: 384px;
-    height: auto;
-    margin: 48px;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+.carousel img.active {
+    opacity: 1;
 }
 
 

@@ -32,3 +32,20 @@ document.querySelectorAll(".student-card").forEach(card => {
 if (window.innerWidth < 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
     alert("Tolong nyalakan mode desktop.")
 }
+
+
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('img')
+    runCarousel(slides)
+})
+function runCarousel(imageSet) {
+    let i = 0
+    imageSet[i].classList.add('active')
+
+    setInterval(() => {
+        imageSet[i].classList.remove('active')
+        i = (i + 1) % imageSet.length
+        imageSet[i].classList.add('active')
+        console.log('i towkrs')
+    }, 6000)
+}
