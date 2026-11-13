@@ -31,52 +31,32 @@
                     <p class="float" style="font-size: 32px;">
                         <br>Check Out My Favorite Music!<br>|<br>\/
                     </p>
-                    <div class="music-player">
-                        <div class="cell">
-                            <img alt="s1" id="s1c">
-                        </div>
-                        <div class="cell">
-                            <audio id="s1au"></audio>
 
-                            <h3 id="s1t"></h3>
+                    <iframe data-testid="embed-iframe"
+                            style="border-radius:12px"
+                            src=""
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" id="s1"></iframe>
 
-                            <div style="display: flex; align-items: center;">
-                                <button id="s1b">▶</button>
-                                <input type="range" id="s1sb" min="0" max="100" value="0">
-                                <span id="s1tl">0:00 / 0:00</span>
-                            </div>
-                        </div>
+                    <iframe data-testid="embed-iframe" 
+                            style="border-radius:12px"
+                            src="https://open.spotify.com/embed/track/4ySf8cavypnZvmJcv3N1jT?utm_source=generator&theme=0"
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" id="s2" class="inactive"></iframe>
 
-                        <div class="inactive cell" id="s2ca">
-                            <img alt="s2" id="s2c">
-                        </div>
-                        <div class="inactive cell" id="s2cb">
-                            <audio id="s2au"></audio>
-
-                            <h3 id="s2t"></h3>
-
-                            <div style="display: flex; align-items: center;">
-                                <button id="s2b">▶</button>
-                                <input type="range" id="s2sb" min="0" max="100" value="0">
-                                <span id="s2tl">0:00 / 0:00</span>
-                            </div>
-                        </div>
-
-                        <div class="inactive cell" id="s3ca">
-                            <img alt="s3" id="s3c">
-                        </div>
-                        <div class="inactive cell" id="s3cb">
-                            <audio id="s3au"></audio>
-
-                            <h3 id="s3t"></h3>
-
-                            <div style="display: flex; align-items: center;">
-                                <button id="s3b">▶</button>
-                                <input type="range" id="s3sb" min="0" max="100" value="0">
-                                <span id="s3tl">0:00 / 0:00</span>
-                            </div>
-                        </div>
-                    </div>
+                    <iframe data-testid="embed-iframe"
+                            style="border-radius:12px"
+                            src="https://open.spotify.com/embed/track/4VgQDGeib4KMN3iXr410Sr?utm_source=generator&theme=0"
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" id="s3" class="inactive"></iframe>
+                    
+                    <!--
+                        goodbye old music player
+                        lmao
+                    -->
                 </div>
             </div>
         </div>

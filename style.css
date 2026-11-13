@@ -91,6 +91,7 @@ hr {
     width: 600px;
     height: 400px;
     overflow: hidden;
+    margin-bottom: 24px;
 }
 .carousel img {
     position: absolute;
