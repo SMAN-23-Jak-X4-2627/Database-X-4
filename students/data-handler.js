@@ -7,9 +7,9 @@ export async function loadData(id) {
     const data = await response.json()
     return data
 }
-export async function json(path) {
+export async function json(path, error) {
     const response = await fetch(path)
-    if (!response.ok) {
+    if (!response.ok && error) {
         throw new Error(`${response.status}`)
     }
     const data = await response.json()

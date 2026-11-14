@@ -15,7 +15,7 @@ document.querySelectorAll(".student-card").forEach(card => {
     card.addEventListener("click", studentPage)
 
     card.querySelector('h4').textContent = nama.nama[i]
-    card.querySelector('img').src = `assets/students/${i + 1}/photo.jpg`
+    card.querySelector('img').src = `${access.photo}${i + 1}.jpg`
     // TODO: make it so that png can also work
     // wrtf bro everyone uses jpg :sob: :sob: nvm about it
     i++

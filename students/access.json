@@ -1,3 +1,14 @@
 {
-    "nama": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/studentdata/nama.json"
+    "nama": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/studentdata/nama.json",
+    
+    "data": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/studentdata/biodata/",
+
+    "photo": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/photo/",
+
+    "a1": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-1-6/",
+    "a2": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-7-12/",
+    "a3": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-13-18/",
+    "a4": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-19-24/",
+    "a5": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-25-30/",
+    "a6": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/asset-31-36/"
 }
