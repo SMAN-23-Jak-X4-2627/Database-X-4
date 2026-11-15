@@ -1,12 +1,3 @@
-export async function loadData(id) {
-    const path = `data/${id}.json`
-    const response = await fetch(path)
-    if (!response.ok) {
-        throw new Error(`it broken ${response.status}`);
-    }
-    const data = await response.json()
-    return data
-}
 export async function json(path, error) {
     const response = await fetch(path)
     if (!response.ok && error) {
@@ -21,6 +12,7 @@ export async function url() {
     if (!response.ok) {
         throw new Error(` it broke ${response.status}`)
     } //fix this shi
+    // ?????
     const data = await response.json()
     return data
 }

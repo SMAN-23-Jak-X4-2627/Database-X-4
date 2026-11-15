@@ -9,3 +9,5 @@ Website ini dibuat oleh kelompok 2 bertema IT. Anggota kelompok meliputi:
 5. Putri (30) (`putrinur8149-png`)
 6. Samari (31)
 
+## Commit Sedikit?
+Sebenarnya dalam pembuatan website ini banyak data langsung dimasukkan ke dalam repository. Dan ternyata, ini kesalahan besar. Jadi digunakan alat `git-filter-repo` untuk menghapus banyak sejarah commit sehingga tidak ada data sensitif yang publik.
