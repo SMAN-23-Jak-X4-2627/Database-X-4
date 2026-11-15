@@ -1,5 +1,7 @@
 {
     "nama": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/studentdata/nama.json",
+
+    "carousel": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/carousel/",
     
     "data": "https://jynrpaaqsfftyrvpadha.supabase.co/storage/v1/object/public/studentdata/biodata/",
 

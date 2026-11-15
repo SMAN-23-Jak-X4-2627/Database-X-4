@@ -1,18 +1,14 @@
 export async function json(path, error) {
     const response = await fetch(path)
-    if (!response.ok && error) {
-        throw new Error(`${response.status}`)
-    }
+    //if (!response.ok && error)
+    //    throw new Error(`${response.status}`)
+    // sadly, there won't be errors...
     const data = await response.json()
     return data
 }
 export async function url() {
     const dict = new URL('access.json', import.meta.url)
     const response = await fetch(dict)
-    if (!response.ok) {
-        throw new Error(` it broke ${response.status}`)
-    } //fix this shi
-    // ?????
     const data = await response.json()
     return data
 }

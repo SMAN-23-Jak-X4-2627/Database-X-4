@@ -27,8 +27,14 @@ if (window.innerWidth < 768 && ('ontouchstart' in window || navigator.maxTouchPo
 }
 
 
+let j = 0
 document.querySelectorAll('.carousel').forEach(carousel => {
     const slides = carousel.querySelectorAll('img')
+    for (let k = 0; k < slides.length; k++) {
+        slides[k].src = `${access.carousel}${j + 1}/${k + 1}.jpg`
+        console.log(`${access.carousel}${j + 1}/${k + 1}.jpg`)
+    }
+    j++
     runCarousel(slides)
 })
 function runCarousel(imageSet) {

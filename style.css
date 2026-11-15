@@ -6,6 +6,7 @@ body {
     background-image: url(assets/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
 
     background-color: thistle;
 }
@@ -92,9 +93,12 @@ hr {
     height: 400px;
     overflow: hidden;
     margin-bottom: 24px;
+    place-items: center;
 }
 .carousel img {
     position: absolute;
+    width: 600px;
+    height: 400px;
     inset: 0;
     opacity: 0;
     object-fit: cover;

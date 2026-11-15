@@ -11,8 +11,6 @@ if (id == 22) {
     ext.innerHTML = ""
 }
 
-const studDir = '../assets/students/'
-
 import { json , url } from "./data-handler.js";
 const access = await url()
 
@@ -64,20 +62,20 @@ async function dataDisplay(data) {
         // i change it to jpg
     }
 
-    const h = await fetch(studDir + id + '/bg.jpg')
+    const h = await fetch(`../assets/bg/${id}.jpg`)
     if (h.ok) {
-        document.body.style.backgroundImage = `${bucket}${id}/bg.jpg`
+        document.body.style.backgroundImage = `url("../assets/bg/${id}.jpg")`
         //nvm i'm too lazy to make these work for both png and jpg
     } else {
-        document.body.style.backgroundImage = 'assets/bg.jpg'
+        document.body.style.backgroundImage = 'url("../assets/bg.jpg")'
     }
 
     document.getElementById('s1').src = `https://open.spotify.com/embed/track/${data.song1id}?utm_source=generator&theme=1`
-    if (data.song2id != "") {
+    if (data.song2id != "" && data.song2id != undefined) {
         document.getElementById('s2').src = `https://open.spotify.com/embed/track/${data.song2id}?utm_source=generator&theme=1`
         document.getElementById('s2').classList.remove('inactive')
     }
-    if (data.song3id != "") {
+    if (data.song3id != "" && data.song3id != undefined) {
         document.getElementById('s3').src = `https://open.spotify.com/embed/track/${data.song3id}?utm_source=generator&theme=1`
         document.getElementById('s3').classList.remove('inactive')
     } // i just realized the entire purpose of the song title in the data is just so that i can identify the songs to find the code for it
