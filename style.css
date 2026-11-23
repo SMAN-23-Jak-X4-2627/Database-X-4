@@ -89,7 +89,7 @@ hr {
 }
 .carousel {
     position: relative;
-    width: 600px;
+    width: 640px;
     height: 400px;
     overflow: hidden;
     margin-bottom: 24px;
@@ -97,7 +97,7 @@ hr {
 }
 .carousel img {
     position: absolute;
-    width: 720px;
+    width: 640px;
     height: 400px;
     inset: 0;
     opacity: 0;
