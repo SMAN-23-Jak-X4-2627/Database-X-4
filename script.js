@@ -32,7 +32,6 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     const slides = carousel.querySelectorAll('img')
     for (let k = 0; k < slides.length; k++) {
         slides[k].src = `${access.carousel}${j + 1}/${k + 1}.jpg`
-        console.log(`${access.carousel}${j + 1}/${k + 1}.jpg`)
     }
     j++
     runCarousel(slides)
@@ -47,3 +46,9 @@ function runCarousel(imageSet) {
         imageSet[i].classList.add('active')
     }, 6000)
 }
+
+const img = document.querySelectorAll("image");
+
+img.onload = () => {
+  img.style.opacity = "1";
+};

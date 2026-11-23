@@ -52,7 +52,6 @@ async function dataDisplay(data) {
         const h = await fetch(`${bucket}${id}/${i + 1}.jpg`)
         if (!h.ok) {
             console.log('ignore this error it works though')
-            console.log(`${bucket}${id}/${i}.jpg`)
             break
         }
         // TODO: make it so that jpg can also work
@@ -68,6 +67,7 @@ async function dataDisplay(data) {
         //nvm i'm too lazy to make these work for both png and jpg
     } else {
         document.body.style.backgroundImage = 'url("../assets/bg.jpg")'
+        console.log('ignore this error too')
     }
 
     document.getElementById('s1').src = `https://open.spotify.com/embed/track/${data.song1id}?utm_source=generator&theme=1`
@@ -84,7 +84,11 @@ async function dataDisplay(data) {
 const data = await json(`${access.data}${id}.json`, 1)
 await dataDisplay(data)
 
+const img = document.querySelectorAll("image");
 
+img.onload = () => {
+  img.style.opacity = "1";
+};
 
 // spectrum visualizer
 // if i have the time for it
